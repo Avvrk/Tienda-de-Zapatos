@@ -1,0 +1,107 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="carrito">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="carrito-contenido">
+        <ul>
+          <li>Producto 1</li>
+          <li>Producto 2</li>
+          <li>Producto 3</li>
+          <!-- Agrega más elementos de la lista según sea necesario -->
+        </ul>
+      </div>
+    </div>
+  <style>
+    .carrito {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .carrito i {
+    font-size: 24px;
+    cursor: pointer;
+    padding-left: 400px;
+  }
+  
+  .carrito-contenido {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .carrito:hover .carrito-contenido {
+    display: block;
+  }
+  
+  .carrito-contenido ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .carrito-contenido li {
+    margin: 5px 0;
+  }
+  
+  </style>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de clics en botones</title>
+</head>
+
+<body>
+
+  <button onclick="agregarElemento('boton1')">Agregar Elemento 1</button>
+  <ul id="listaElementos1"></ul>
+  <p id="contador1"></p>
+
+  <button onclick="agregarElemento('boton2')">Agregar Elemento 2</button>
+  <ul id="listaElementos2"></ul>
+  <p id="contador2"></p>
+
+  <script>
+    // Objeto para almacenar contadores
+    var contadores = {};
+
+    function agregarElemento(botonId) {
+      // Si no hay un contador asociado a este botón, inicialízalo en 0
+      if (!contadores[botonId]) {
+        contadores[botonId] = 0;
+      }
+
+      contadores[botonId]++;
+
+      var lista = document.getElementById('listaElementos' + botonId.charAt(botonId.length - 1));
+      var nuevoElemento = document.createElement('li');
+      nuevoElemento.textContent = 'Elemento ' + contadores[botonId];
+      lista.appendChild(nuevoElemento);
+
+      document.getElementById('contador' + botonId.charAt(botonId.length - 1)).textContent = 'Cantidad de elementos: ' + contadores[botonId];
+    }
+  </script>
+
+</body>
+
+</html>
+
+  
