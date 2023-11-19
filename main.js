@@ -183,9 +183,10 @@ function prepararCarrito(producto) {
     document.getElementById("listaProductos").innerHTML = "";
     agregarAlCarrito();
 }
+
 historialProductos = [];
 
-function agregarAlCarrito() {console.log('si entro a la funcion')
+function agregarAlCarrito() {
     const carrito = document.createDocumentFragment();
 
     historialProductos.forEach((elemento, i) => {

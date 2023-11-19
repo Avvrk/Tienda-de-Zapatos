@@ -326,9 +326,23 @@ li:hover {
     color: #1465bb;
 }
 
+@media (max-width: 768px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 625px) {
     h1 {
         font-size: 50px;
         width: 463px;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 42px;
+        width: 389px;
     }
 }
